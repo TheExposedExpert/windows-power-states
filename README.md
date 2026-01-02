@@ -39,4 +39,15 @@ As the previous figure shows, the system cannot enter one sleep state directly f
 https://learn.microsoft.com/en-us/windows-hardware/drivers/kernel/power-states<br>
 https://learn.microsoft.com/en-us/windows-hardware/drivers/kernel/system-power-states
 
+So, the Windows operating system includes system power states from S0 to S5. There's one additional system power state which is G3 and it describes Mechanical Off state by the system. The G3 power state can be achieved by switching the Power Supply Unit (PSU) to off state with a physical switch which disables the PSU's standby power. This is normal activity for desktop systems, for example. Here is Microsoft's table describing system power each state:
 
+| Power state   | ACPI state    | Description  |
+| ------------- |:-------------:| ------------:|
+| Working       | S0            | The system is fully usable. Hardware components that aren't in use can save power by entering a lower power state. |
+| x             | x             | x            |
+
+
+
+<ins>Sources:</ins><br>
+https://learn.microsoft.com/en-us/windows/win32/power/system-power-states<<br>
+https://ietresearch.onlinelibrary.wiley.com/doi/10.1049/iet-cdt.2013.0137
