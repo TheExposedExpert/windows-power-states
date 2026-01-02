@@ -51,7 +51,15 @@ So, the Windows operating system includes system power states from S0 to S5. The
 | Mechanical off             | G3             | The system is completely off and consumes no power. The system returns to the working state only after a full reboot.            |
 
 
-
 <ins>Sources:</ins><br>
 https://learn.microsoft.com/en-us/windows/win32/power/system-power-states<<br>
 https://ietresearch.onlinelibrary.wiley.com/doi/10.1049/iet-cdt.2013.0137
+
+Here's is a diagram provided by Microsoft which describes activity when system power state is changed via Control Panel:
+
+![text](/images/sysstate.png)
+
+<ins>Sources:</ins><br>
+https://learn.microsoft.com/en-us/windows-hardware/drivers/kernel/system-wide-overview-of-power-management
+
+
