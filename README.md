@@ -63,3 +63,13 @@ Here's is a diagram provided by Microsoft which describes activity when system p
 https://learn.microsoft.com/en-us/windows-hardware/drivers/kernel/system-wide-overview-of-power-management
 
 
+Available system power states by the hardware running the operating system can be inspected with powercfg.exe tool with /availablesleepstates parameter:
+
+![text](/images/powercfg_availablesleepstates.png)
+
+<ins>Sources:</ins><br>
+https://learn.microsoft.com/en-us/windows-hardware/design/device-experiences/powercfg-command-line-options
+
+
+
+
