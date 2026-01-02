@@ -29,6 +29,6 @@ State S0 is the working state. States S1, S2, S3, and S4 are sleeping states, in
 
 A system is waking when it is in transition from the shutdown state (S5) or any sleeping state (S1-S4) to the working state (S0), and it is going to sleep when it is in transition from the working state to any sleep state or the shutdown state. The following figure shows the possible system power state transitions.
 
-![alt text](/images/sysstates.png)
+![text](/images/sysstate.png)
 
 
