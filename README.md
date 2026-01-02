@@ -42,7 +42,7 @@ https://learn.microsoft.com/en-us/windows-hardware/drivers/kernel/system-power-s
 So, the Windows operating system includes system power states from S0 to S5. There's one additional system power state which is G3 and it describes Mechanical Off state by the system. The G3 power state can be achieved by switching the Power Supply Unit (PSU) to off state with a physical switch which disables the PSU's standby power. This is normal activity for desktop systems, for example. Here is Microsoft's table describing system power each state:
 
 | Power state   | ACPI state    | Description  |
-| ------------- |:-------------:| ------------:|
+| ------------- | ------------- | ------------ |
 | Working       | S0            | The system is fully usable. Hardware components that aren't in use can save power by entering a lower power state. |
 | x             | x             | x            |
 
