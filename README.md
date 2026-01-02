@@ -82,17 +82,17 @@ https://learn.microsoft.com/en-us/windows-hardware/design/device-experiences/pow
 
 Most of the settings can be configured with control panel power & battery settings. Currently the system is set to go to system power state S3 when closing the lid, for example.
 
-![text](/images/powercfg_availablesleepstates.png)
+![text](/images/controlpanel_powerbattery.png)
 
 What are these Hybrid Sleep and Fast Startup states again?
 
 Hybrid sleep, used on desktops, is where a system uses a hibernation file with S1-S3. The hibernation file saves the system state in case the system loses power while in sleep. Hybrid sleep option can be configured with old school power options control panel item. Currently the test system is configured with disabled option:
 
-![text](/images/powercfg_availablesleepstates.png)
+![text](/images/controlpanel_allowhybridsleep.png)
 
 Similarly, the Fast Startup option can be configured with the old school power options control panel item. Currently the test system is configured with enabled option:
 
-![text](/images/powercfg_availablesleepstates.png)
+![text](/images/controlpanel_faststartup.png)
 
 So this laptop test system, running Windows 11 Pro version 10.0.26200.6584 supports the following system power states:
 
