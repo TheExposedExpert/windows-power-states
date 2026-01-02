@@ -2,6 +2,8 @@
 
 This chapter includes direct quotes from Microsoft documentation.
 
+## Introduction
+
 
 The Windows operating system includes Windows Advanced Configuration and Power Interface (ACPI) driver (Acpi.sys) which is responsible for power management and Plug and Play (PnP) device enumeration activities and it acts as the interface between the operating system and the ACPI BIOS.
 
