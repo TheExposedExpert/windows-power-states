@@ -44,6 +44,10 @@ So, the Windows operating system includes system power states from S0 to S5. The
 | Power state   | ACPI state    | Description  |
 |:------------- |:------------- |:------------ |
 | Working       | S0            | The system is fully usable. Hardware components that aren't in use can save power by entering a lower power state. |
+| Sleep (Modern Standby)             | S0 low-power idle             | Some SoC systems support a low-power idle state known as Modern Standby. In this state, the system can very quickly switch from a low-power state to high-power state in response to hardware and network events. Note: SoC systems that support Modern Standby don't use S1-S3.            |
+| x             | x             | x            |
+| x             | x             | x            |
+| x             | x             | x            |
 | x             | x             | x            |
 
 
