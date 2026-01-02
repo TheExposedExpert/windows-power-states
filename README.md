@@ -57,7 +57,7 @@ https://ietresearch.onlinelibrary.wiley.com/doi/10.1049/iet-cdt.2013.0137
 
 Here's is a diagram provided by Microsoft which describes activity when system power state is changed via Control Panel:
 
-![text](/images/sysstate.png)
+![text](/images/power-comp.png)
 
 <ins>Sources:</ins><br>
 https://learn.microsoft.com/en-us/windows-hardware/drivers/kernel/system-wide-overview-of-power-management
