@@ -10,6 +10,8 @@ The acpi.sys driver is located in the C:\Windows\System32\drivers\ folder.
 <ins>Sources:</ins><br>
 https://learn.microsoft.com/en-us/windows-hardware/drivers/kernel/acpi-driver<br>
 https://learn.microsoft.com/en-us/windows-hardware/drivers/kernel/acpi-bios
+<br>
+<br>
 
 A power state indicates the level of power consumption — and thus the extent of computing activity — by the system or by a single device. The power manager sets the power state of the system as a whole. Device drivers set the power state of their individual devices.
 
@@ -38,6 +40,8 @@ As the previous figure shows, the system cannot enter one sleep state directly f
 <ins>Sources:</ins><br>
 https://learn.microsoft.com/en-us/windows-hardware/drivers/kernel/power-states<br>
 https://learn.microsoft.com/en-us/windows-hardware/drivers/kernel/system-power-states
+<br>
+<br>
 
 So, the Windows operating system includes system power states from S0 to S5. There's one additional system power state which is G3 and it describes Mechanical Off state by the system. The G3 power state can be achieved by switching the Power Supply Unit (PSU) to off state with a physical switch which disables the PSU's standby power. This is normal activity for desktop systems, for example. Here is Microsoft's table describing system power each state:
 
@@ -54,6 +58,8 @@ So, the Windows operating system includes system power states from S0 to S5. The
 <ins>Sources:</ins><br>
 https://learn.microsoft.com/en-us/windows/win32/power/system-power-states<<br>
 https://ietresearch.onlinelibrary.wiley.com/doi/10.1049/iet-cdt.2013.0137
+<br>
+<br>
 
 Here's is a diagram provided by Microsoft which describes activity when system power state is changed via Control Panel:
 
@@ -61,6 +67,8 @@ Here's is a diagram provided by Microsoft which describes activity when system p
 
 <ins>Sources:</ins><br>
 https://learn.microsoft.com/en-us/windows-hardware/drivers/kernel/system-wide-overview-of-power-management
+<br>
+<br>
 
 
 Available system power states by the hardware running the operating system can be inspected with powercfg.exe tool with /availablesleepstates parameter:
@@ -69,6 +77,8 @@ Available system power states by the hardware running the operating system can b
 
 <ins>Sources:</ins><br>
 https://learn.microsoft.com/en-us/windows-hardware/design/device-experiences/powercfg-command-line-options
+<br>
+<br>
 
 
 
