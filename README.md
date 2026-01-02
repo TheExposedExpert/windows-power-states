@@ -144,3 +144,39 @@ https://learn.microsoft.com/en-us/windows-hardware/customize/power-settings/slee
 <br>
 
 
+What kind of events are logged by default by the Windows operating system when power state changes between S0 and other states? How do we investigate when a computer has been in sleep / hibernate / shutdown / etc state based on Windows event logs?
+
+Let's test these power states with the following scenarios:
+
+* Click power off from start menu and re-start the operating system.
+* Click sleep from start menu and re-start the operating system. 
+* Click hibernate from start menu and re-start the operating system. 
+* Create blue screen of death and re-start the operating system.
+* Hard shutdown by holding the physical power button for 10 seconds and re-start the operating system.
+
+Hard shutdown can be forced by holding the power button for 10-20 seconds, for example, on Lenovo and Microsoft Surface devices.
+
+<ins>Sources:</ins><br>
+https://support.microsoft.com/en-us/surface/force-a-shutdown-and-restart-your-surface-cf13996e-fef0-dbb0-1e94-cdd7ff88b840<br>
+https://support.lenovo.com/us/en/troubleshoot/lpt000805
+<br>
+<br>
+
+Blue screen of death can be programmatically performed with SysInternals NotMyFault tool.
+
+<ins>Sources:</ins><br>
+https://learn.microsoft.com/en-us/sysinternals/downloads/notmyfault
+<br>
+<br>
+
+So we need to test each of these five scenarios with all available system power states. From S0 (Working) to:
+
+* S3 - Sleep
+* S3 - Sleep + Hybrid Sleep
+* S4 - Hibernate
+* S4 - Hibernate + Fast Startup
+* S5 - Soft off
+
+And back.
+
+
