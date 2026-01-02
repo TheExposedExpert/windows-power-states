@@ -133,6 +133,7 @@ By setting the registry key value between 0 (disabled) and 1 (enabled). Alternat
 The GUID of "381b4222-f694-41f0-9685-ff5bb260df2e" stands for Balanced power plan as seen in previous pictures.<br>
 The GUID of "238c9fa8-0aad-41ed-83f4-97be242c8f20" stands for Sleep Settings as seen in previous pictures.<br>
 The GUID of "94ac6d29-73ce-41a6-809f-6363ba21b47e" stands for Hybrid Sleep as seen in previous pictures.<br>
+
 So in essence the balanced power plan sleep settings were modified. Modifications included hybrid sleep configuration changes for both battery and plugged in power schemes.
 
 <ins>Sources:</ins><br>
