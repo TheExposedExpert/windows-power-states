@@ -7,6 +7,8 @@ The Windows operating system includes Windows Advanced Configuration and Power I
 
 The acpi.sys driver is located in the C:\Windows\System32\drivers\ folder.
 
+![text](/images/acpi.sys_explorer.png)
+
 <ins>Sources:</ins><br>
 https://learn.microsoft.com/en-us/windows-hardware/drivers/kernel/acpi-driver<br>
 https://learn.microsoft.com/en-us/windows-hardware/drivers/kernel/acpi-bios
@@ -114,8 +116,8 @@ https://learn.microsoft.com/en-us/sysinternals/downloads/procmon
 
 Fast Startup option is configured via "Computer\HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\Power\HiberbootEnabled" registry key by changing the value between 0 (disabled) and 1 (enabled).
 
-![text](/images/controlpanel_faststartup.png)
-![text](/images/controlpanel_faststartup.png)
+![text](/images/procmon_disablefaststartup.png)
+![text](/images/regedit_disablefaststartup.png)
 
 Hybrid Sleep option is configured via two registry keys
 
@@ -125,8 +127,8 @@ Hybrid Sleep option is configured via two registry keys
 
 By setting the registry key value between 0 (disabled) and 1 (enabled). Alternating Current (AC) describes battery power while Direct Current (DC) describes plugged in power cord in terms of electricity.
 
-![text](/images/controlpanel_faststartup.png)
-![text](/images/controlpanel_faststartup.png)
+![text](/images/procmon_enablehybridsleep.png)
+![text](/images/regedit_enablehybridsleep.png)
 
 The GUID of "381b4222-f694-41f0-9685-ff5bb260df2e" stands for Balanced power plan as seen in previous pictures.<br>
 The GUID of "238c9fa8-0aad-41ed-83f4-97be242c8f20" stands for Sleep Settings as seen in previous pictures.<br>
