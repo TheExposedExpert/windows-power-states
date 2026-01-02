@@ -6,5 +6,5 @@ The Windows operating system includes Windows Advanced Configuration and Power I
 The acpi.sys driver is located in the *C:\Windows\System32\drivers\* folder.
 
 Sources: 
-https://learn.microsoft.com/en-us/windows-hardware/drivers/kernel/acpi-driver 
+https://learn.microsoft.com/en-us/windows-hardware/drivers/kernel/acpi-driver<br>
 https://learn.microsoft.com/en-us/windows-hardware/drivers/kernel/acpi-bios
