@@ -24,3 +24,11 @@ The operating system supports six system power states, referred to as S0 (fully 
 * Hardware latency: how long does it take to return the computer to the working state?
 
 * System hardware context (such as the content of volatile processor registers, memory caches, and RAM): how much system hardware context is retained? Must the operating system reboot to return to the working state?
+
+State S0 is the working state. States S1, S2, S3, and S4 are sleeping states, in which the computer appears off because of reduced power consumption but retains enough context to return to the working state without restarting the operating system. State S5 is the shutdown or off state.
+
+A system is waking when it is in transition from the shutdown state (S5) or any sleeping state (S1-S4) to the working state (S0), and it is going to sleep when it is in transition from the working state to any sleep state or the shutdown state. The following figure shows the possible system power state transitions.
+
+![alt text](/images/icon48.png)
+
+
