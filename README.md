@@ -357,7 +357,7 @@ The Event ID 6013 is logged periodically (I believe once a day by default) by th
 
 ### Test 2
 
-Test 2 has exactly the same event IDs logged as Test 1, but events include mention of operating system restart instead of power off.
+Test 2 has exactly the same event IDs logged as Test 1, but events include mention of operating system restart instead of power off in events 1074 and 109.
 
 #### Events before power state change
 
