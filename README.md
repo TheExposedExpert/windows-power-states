@@ -711,3 +711,27 @@ Tests 6 has exactly the same event IDs and event information as Test 5.
 | 2026-01-03T17:22:18.5003411Z | Event ID 1 (Kernel-General) |
 | 2026-01-03T17:22:20.5984291Z | Event ID 1 (Power-Troubleshooter) |
 
+
+<br>
+
+### Test 7
+
+Tests 7 has exactly the same event IDs and event information as Test 5. One thing to note is that on a Lenovo laptop hibernation does not end with pressing of a function key and requires press of a power button.
+
+#### Events before power state change
+
+| Event time | Event ID |
+|------------|----------|
+| 2026-01-04T18:40:19.7360030Z | Event ID 187 |
+| 2026-01-04T18:40:20.7596681Z | Event ID 42 |
+
+
+#### Events after power state change
+
+| Event time | Event ID |
+|------------|----------|
+| 2026-01-04T18:40:21.7578956Z | Event ID 107 |
+| 2026-01-04T18:42:32.5003544Z | Event ID 1 (Kernel-General) |
+| 2026-01-04T18:42:34.1397846Z | Event ID 1 (Power-Troubleshooter) |
+
+
