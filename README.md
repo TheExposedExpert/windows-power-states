@@ -194,4 +194,65 @@ So we need to test each of these five scenarios with all available system power 
 
 And back.
 
+<br>
+<br>
+<br>
+<br>
+
+## Test Results
+
+So I performed the below nine tests on the Windows test host:
+
+| Power state change | Test number | Power state initiation |
+|--------------------|-----------------|------------------------|
+| S0 -> S5 | Test 1 | Shut down from start menu (fast startup disabled) |
+| S0 -> S5 | Test 2 | Restart from start menu (fast startup disabled) |
+| S0 -> S5 | Test 3 | BSOD |
+| S0 -> S5 | Test 4 | Hard shutdown |
+| S0 -> S3 | Test 5 | Sleep from start menu |
+| S0 -> S3 + Hybrid Sleep | Test 6 | Sleep from start menu |
+| S0 -> S4 | Test 7 | Hibernate from start menu |
+| S0 -> S4 + Fast Startup | Test 8 | Hibernate from start menu |
+| S0 -> S4 + Fast Startup | Test 9 | Shut down from start menu |
+
+### Test 1
+
+#### Events before power state change
+
+| Event time | Event ID |
+|------------|----------|
+| 2026-01-03T15:35:23.0527356Z | Event ID 1074 |
+| 2026-01-03T15:35:30.3957825Z | Event ID 6006 |
+| 2026-01-03T15:35:31.3757329Z | Event ID 109 |
+| 2026-01-03T15:35:31.6720412Z | Event ID 577 |
+| 2026-01-03T15:35:31.8679813Z | Event ID 13 |
+
+Here are the event log entries before power change:
+
+<details>
+<summary>Event ID 1074</summary>
+
+![text](/images/Test01-01.png)
+
+```python
+ The process C:\Windows\SystemApps\Microsoft.Windows.StartMenuExperienceHost_cw5n1h2txyewy\StartMenuExperienceHost.exe (DESKTOP-J1VGUK5) has initiated the power off of computer DESKTOP-J1VGUK5 on behalf of user DESKTOP-J1VGUK5\Test for the following reason: Other (Unplanned)
+ Reason Code: 0x0
+ Shutdown Type: power off
+ Comment: 
+```
+</details>
+
+
+
+
+#### Events after power state change
+
+| Event time | Event ID |
+|------------|----------|
+| 2026-01-03T15:37:18.9517820Z | Event ID 12 |
+| 2026-01-03T15:37:18.9528746Z | Event ID 20 |
+| 2026-01-03T15:37:29.1776946Z | Event ID 6005 |
+| 2026-01-03T15:37:29.1779612Z | Event ID 6013 |
+
+
 
