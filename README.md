@@ -439,6 +439,87 @@ Reason: Kernel API
 | 2026-01-03T16:00:53.4769290Z | Event ID 6005 |
 | 2026-01-03T16:00:53.4772313Z | Event ID 6013 |
 
-Event log entries after power change activity:
+<br>
 
+### Test 3
+
+#### Events before power state change
+
+An unexpected power state change from S0 (Working) to S5 (Soft off) due to a Blue Screen Of Death (BSOD) does not generate any event log entries before the power change activity.
+This is normal operation of the operating system as it cannot log any events to the event log due to an unexpected error leading to a BSOD.
+
+#### Events after power state change
+
+Events after the power state change include same event ID's as when an operating system is powering on in normal conditions. However, it includes additional event IDs (162, 41, 1001, 6008) indicating that it did not shutdown successfully.
+
+| Event time | Event ID |
+|------------|----------|
+| 2026-01-03T16:15:39.9825738Z | Event ID 12 |
+| 2026-01-03T16:15:39.9836827Z | Event ID 20 |
+| 2026-01-03T16:15:41.0791320Z | Event ID 162 |
+| 2026-01-03T16:15:41.3025201Z | Event ID 41 |
+| 2026-01-03T16:15:46.9091530Z | Event ID 1001 |
+| 2026-01-03T16:15:48.7093472Z | Event ID 6008 |
+| 2026-01-03T16:15:48.7106427Z | Event ID 6005 |
+| 2026-01-03T16:15:48.7108770Z | Event ID 6013 |
+
+<details>
+<summary>Event ID 20</summary>
+
+The Event ID 20 indicates that the power change operation for last shutdown was not successful. However, the bootup operation was successful and is logged similarly than in normal conditions.
+
+![text](/images/Test03-02.png)
+
+```python
+ The last shutdown's success status was false. The last boot's success status was true.
+```
+</details>
+
+<details>
+<summary>Event ID 162</summary>
+
+The Event ID 162 indicates that a BSOD dump file has been successfully created on the host (due to the BSOD activity in this case).
+
+![text](/images/Test03-03.png)
+
+```python
+ Dump file generation succeded.
+```
+</details>
+
+<details>
+<summary>Event ID 41</summary>
+
+The Event ID 41 indicates that the operating system was not powered off cleanly in normal conditions (due to the BSOD activity in this case).
+
+![text](/images/Test03-04.png)
+
+```python
+ The system has rebooted without cleanly shutting down first. This error could be caused if the system stopped responding, crashed, or lost power unexpectedly.
+```
+</details>
+
+<details>
+<summary>Event ID 1001</summary>
+
+The Event ID 1001 indicates that the operating system was not powered off cleanly in normal conditions (due to the BSOD activity in this case) and includes the directory path of the minidump file which was created during the operating system power on activity.
+
+![text](/images/Test03-05.png)
+
+```python
+ The computer has rebooted from a bugcheck.  The bugcheck was: 0x000000d1 (0xffffbe89dbdd9010, 0x0000000000000002, 0x0000000000000000, 0xfffff8008a2312f0). A dump was saved in: C:\WINDOWS\Minidump\010326-7703-01.dmp. Report Id: b4e3623d-6bb4-4bc9-96a4-b4f110dd148c.
+```
+</details>
+
+<details>
+<summary>Event ID 6008</summary>
+
+The Event ID 6008 also indicates that the operating system was not powered off cleanly in normal conditions (due to the BSOD activity in this case) and also includes the system shutdown timestamp in local timezone.
+
+![text](/images/Test03-01.png)
+
+```python
+ The previous system shutdown at 6:00:53 PM on ‎1/‎3/‎2026 was unexpected.
+```
+</details>
 
