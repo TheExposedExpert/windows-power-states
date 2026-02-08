@@ -692,7 +692,7 @@ Wake Source: Power Button
 
 ### Test 6
 
-Tests 6 has exactly the same event IDs and event information as Test 5.
+Test 6 has exactly the same event IDs and event information as Test 5.
 
 #### Events before power state change
 
@@ -714,7 +714,7 @@ Tests 6 has exactly the same event IDs and event information as Test 5.
 
 ### Test 7
 
-Tests 7 has exactly the same event IDs and event information as Test 5. One thing to note is that on a Lenovo laptop hibernation does not end with pressing of a function key and requires press of a power button.
+Test 7 has exactly the same event IDs and event information as Test 5. One thing to note is that on a Lenovo laptop hibernation does not end with pressing of a function key and requires press of a power button.
 
 #### Events before power state change
 
@@ -735,7 +735,7 @@ Tests 7 has exactly the same event IDs and event information as Test 5. One thin
 
 ### Test 8
 
-Tests 8 has exactly the same event IDs and event information as Test 5. One thing to note is that on a Lenovo laptop hibernation does not end with pressing of a function key and requires press of a power button.
+Test 8 has exactly the same event IDs and event information as Test 5. One thing to note is that on a Lenovo laptop hibernation does not end with pressing of a function key and requires press of a power button.
 
 #### Events before power state change
 
