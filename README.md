@@ -467,6 +467,8 @@ Events after the power state change include same event ID's as when an operating
 | 2026-01-03T16:15:48.7106427Z | Event ID 6005 |
 | 2026-01-03T16:15:48.7108770Z | Event ID 6013 |
 
+Event log entries after power change activity:
+
 <details>
 <summary>Event ID 20</summary>
 
@@ -527,3 +529,164 @@ The Event ID 6008 also indicates that the operating system was not powered off c
 ```
 </details>
 
+
+<br>
+
+### Test 4
+
+Test 4 was performed by holding down the power button for 20 secods which leads to a hard shutdown of the running operating system.
+
+#### Events before power state change
+
+Similarly to Test 3, a power state change from S0 (Working) to S5 (Soft off) due to a hard shutdown does not generate any event log entries before the power change activity.
+This is normal operation of the operating system as it cannot log any events to the event log due to an unexpected shutdown off the host.
+
+
+#### Events after power state change
+
+Event IDs after the power on activity are similar to the Test 3, but do not include the two minidump file related event IDs (162 & 1001).
+
+| Event time | Event ID |
+|------------|----------|
+| 2026-01-03T16:32:26.9601627Z | Event ID 12 |
+| 2026-01-03T16:32:26.9613488Z | Event ID 20 |
+| 2026-01-03T16:32:28.2317798Z | Event ID 41 |
+| 2026-01-03T16:32:37.7108555Z | Event ID 6008 |
+| 2026-01-03T16:32:37.7123019Z | Event ID 6005 |
+| 2026-01-03T16:32:37.7125046Z | Event ID 6013 |
+
+<br>
+
+### Test 5
+
+Tests 5 - 9 include exactly the same event ID's before and after power change activity with slightly varying information.
+
+#### Events before power state change
+
+| Event time | Event ID |
+|------------|----------|
+| 2026-01-03T16:45:27.4694881Z | Event ID 187 |
+| 2026-01-03T16:45:28.3045823Z | Event ID 42 |
+
+Event log entries before power change activity:
+
+<details>
+<summary>Event ID 187</summary>
+
+The Event ID 187 indicates that a user mode process has attempted to change system's power state by calling either of the two API's included in the event.
+
+![text](/images/Test05-01.png)
+
+```python
+ User-mode process attempted to change the system state by calling SetSuspendState or SetSystemPowerState APIs.
+```
+</details>
+
+<details>
+<summary>Event ID 42</summary>
+
+The Event ID 42 indicates that the system is entering sleep. The information includes the reason why the system is entering the sleep state. It can be due to multiple reasons such as:
+
+* system idle time (with or without power cord)
+* closing of a laptop lid
+* presssing of a power button
+
+![text](/images/Test05-03.png)
+
+```python
+The system is entering sleep.
+
+Sleep Reason: Application API
+```
+</details>
+
+<br>
+
+
+| :warning: WARNING           |
+|:----------------------------|
+
+Here are two examples of the event ID 42 with a different sleep reasons.
+First example is due to lid close operation:
+
+![text](/images/Test05-08.png)
+
+```python
+The system is entering sleep.
+
+Sleep Reason: Button or Lid
+```
+</details>
+
+Second example is due to system idle timer reaching the configured time period for sleep:
+
+![text](/images/Test05-09.png)
+
+```python
+The system is entering sleep.
+
+Sleep Reason: System Idle
+```
+</details>
+
+
+
+#### Events after power state change
+
+| Event time | Event ID |
+|------------|----------|
+| 2026-01-03T16:45:29.3743505Z | Event ID 107 |
+| 2026-01-03T16:47:30.5003447Z | Event ID 1 (Kernel-General) |
+| 2026-01-03T16:47:31.9770684Z | Event ID 1 (Power-Troubleshooter) |
+
+Event log entries after power change activity:
+
+<details>
+<summary>Event ID 107</summary>
+
+The Event ID 107 indicates that the system has returned from sleep. This event is logged with an old timestamp as the operating system has not yet synched the time after sleep operation. This is observed in the next event ID 1.
+
+![text](/images/Test05-04.png)
+
+```python
+The system has resumed from sleep.
+```
+</details>
+
+<details>
+<summary>Event ID 1 (Kernel-General)</summary>
+
+The Event ID 1 (Kernel-General) does not directly indicate sleep operation on the host, but it is always logged after a system wakes up either from sleep or hibernation. The event indicates that the system's time has changed due to a synchronization with the hardware clock. The information includes the time period of the clock change. In this case the clock time was changed from ‎2026‎-‎01‎-‎03T16:45:29.374287100Z to ‎2026‎-‎01‎-‎03T16:47:30.500000000Z which closely resembles the sleeping time of the operating system.
+
+![text](/images/Test05-05.png)
+
+```python
+The system time has changed to ‎2026‎-‎01‎-‎03T16:47:30.500000000Z from ‎2026‎-‎01‎-‎03T16:45:29.374287100Z.
+Time Delta: 121125 ms
+
+Change Reason: System time synchronized with the hardware clock.
+Process: '' (PID 4).
+
+RTC time: ‎2026‎-‎01‎-‎03T18:47:30.500000000Z
+Current time zone bias: -120
+RTC time is in UTC: false
+System time was based on RTC time: false
+```
+</details>
+
+<details>
+<summary>Event ID 1 (Power-Troubleshooter)</summary>
+
+The Event ID 1 (Power-Troubleshooter) indicates a system wake up either from sleep or hibernation. The information includes the time period of the sleep operation. It additionally includes information how the operating system was waken up from sleep.
+
+![text](/images/Test05-07.png)
+
+```python
+The system has returned from a low power state.
+
+Sleep Time: ‎2026‎-‎01‎-‎03T16:45:27.468198400Z
+Wake Time: ‎2026‎-‎01‎-‎03T16:47:30.747553600Z
+
+Wake Source: Power Button
+```
+</details>
