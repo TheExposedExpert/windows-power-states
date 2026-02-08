@@ -788,7 +788,7 @@ The process C:\Windows\SystemApps\Microsoft.Windows.StartMenuExperienceHost_cw5n
 <details>
 <summary>Event ID 42</summary>
 
-The Event ID 42 indicates that the system is entering sleep. Wait!? This is different that was stated in the Event ID 1074 event. The event ID 1074 indicated that the system is being powered off, not being put to sleep. Based on the logged events, when a shut down operation from Windows start menu is performed when hibernation with Fast Startup are configured on, only the host these two events (1074 & 42) are logged prior to the power change. And these two events have a mismatch of the activity performed on the system.
+The Event ID 42 indicates that the system is entering sleep. Wait!? This is different that was stated in the Event ID 1074 event. The event ID 1074 indicated that the system is being powered off, not being put to sleep. Based on the logged events, when a shut down operation from Windows start menu is performed when hibernation with Fast Startup are configured on, only these two events (1074 & 42) are logged on the host prior to the power change. And these two events have a mismatch of the activity performed on the system (power off / sleep).
 
 ![text](/images/Test09-02.png)
 
