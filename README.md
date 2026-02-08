@@ -385,7 +385,12 @@ The process C:\Windows\SystemApps\Microsoft.Windows.StartMenuExperienceHost_cw5n
  Comment: 
 ```
 
-The initating process changes and can be logged also due to software installations or Windows update installation activity. For example, TrustedInstaller.exe can be source for the activity during operating system update installations:
+<br>
+
+| :warning: WARNING           |
+|:----------------------------|
+
+Remember that the initating process information does change and it indicates the process requesting power change activity. It varies, for example, due to software installations or Windows update installation activity. For example, TrustedInstaller.exe can be source for the activity during operating system update installations:
 
 ![text](/images/Test02-03.png)
 
@@ -414,7 +419,7 @@ The process OptionalFeatures.exe has initiated the restart of computer DESKTOP-J
 
 The Event ID 109 also indicates that a reboot was initiated on the host.
 
-![text](/images/Test02-01.png)
+![text](/images/Test02-04.png)
 
 ```python
 The kernel power manager has initiated a shutdown transition.
