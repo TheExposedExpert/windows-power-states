@@ -231,7 +231,7 @@ Event log entries before power change activity:
 <details>
 <summary>Event ID 1074</summary>
 
-The Event ID 1074 indicates the directory path of the process which initiated the activity including the user name. The Shutdown Type field indicates that this is was a "power off" action. The initating process changes and can be logged also due to software installations or Windows update installation activity.
+The Event ID 1074 indicates the directory path of the process which initiated the activity including the user name. The Shutdown Type field indicates that this was a "power off" action. The initating process changes and can be logged also due to software installations or Windows update installation activity.
 
 ![text](/images/Test01-01.png)
 
@@ -559,7 +559,7 @@ Event IDs after the power on activity are similar to the Test 3, but do not incl
 
 ### Test 5
 
-Tests 5 - 9 include exactly the same event ID's before and after power change activity with slightly varying information.
+Tests 5 - 8 include exactly the same event ID's before and after power change activity with slightly varying information.
 
 #### Events before power state change
 
@@ -626,7 +626,6 @@ The system is entering sleep.
 Sleep Reason: System Idle
 ```
 </details>
-
 
 
 #### Events after power state change
@@ -702,7 +701,6 @@ Tests 6 has exactly the same event IDs and event information as Test 5.
 | 2026-01-03T17:20:21.3379116Z | Event ID 187 |
 | 2026-01-03T17:20:22.4138999Z | Event ID 42 |
 
-
 #### Events after power state change
 
 | Event time | Event ID |
@@ -725,7 +723,6 @@ Tests 7 has exactly the same event IDs and event information as Test 5. One thin
 | 2026-01-04T18:40:19.7360030Z | Event ID 187 |
 | 2026-01-04T18:40:20.7596681Z | Event ID 42 |
 
-
 #### Events after power state change
 
 | Event time | Event ID |
@@ -745,8 +742,7 @@ Tests 8 has exactly the same event IDs and event information as Test 5. One thin
 | Event time | Event ID |
 |------------|----------|
 | 2026-01-04T18:55:19.8541955Z | Event ID 187 |
-| 2026-01-04T18:55:20.7510657Z| Event ID 42 |
-
+| 2026-01-04T18:55:20.7510657Z | Event ID 42 |
 
 #### Events after power state change
 
@@ -755,5 +751,65 @@ Tests 8 has exactly the same event IDs and event information as Test 5. One thin
 | 2026-01-04T18:55:21.9958668Z | Event ID 107 |
 | 2026-01-04T18:57:31.5003206Z | Event ID 1 (Kernel-General) |
 | 2026-01-04T18:57:33.0414364Z | Event ID 1 (Power-Troubleshooter) |
+
+<br>
+
+### Test 9
+
+Tests 9 is a hybrid of normal shutdown from start menu (Test 1) and sleep/hibernation tests (Test 5 - 8). 
+
+#### Events before power state change
+
+When performing shut down operation from the start menu a hybrid of event ID 1074 (tests 1 & 2) and event ID 42 (tests 5 - 8) is logged as only these two event IDs are captured in the event log.
+
+| Event time | Event ID |
+|------------|----------|
+| 2026-01-04T19:10:19.7702163Z | Event ID 1074 |
+| 2026-01-04T19:10:22.5485959Z | Event ID 42 |
+
+Event log entries before power change activity:
+
+<details>
+<summary>Event ID 1074</summary>
+
+The Event ID 1074 indicates the directory path of the process which initiated the activity including the user name, just as in tests 1 and 2. The Shutdown Type field indicates that this was a "power off" action.
+
+![text](/images/Test09-01.png)
+
+```python
+The process C:\Windows\SystemApps\Microsoft.Windows.StartMenuExperienceHost_cw5n1h2txyewy\StartMenuExperienceHost.exe (DESKTOP-J1VGUK5) has initiated the power off of computer DESKTOP-J1VGUK5 on behalf of user DESKTOP-J1VGUK5\Test for the following reason: Other (Unplanned)
+ Reason Code: 0x0
+ Shutdown Type: power off
+ Comment: 
+```
+</details>
+
+
+<details>
+<summary>Event ID 42</summary>
+
+The Event ID 42 indicates that the system is entering sleep. Wait!? This is different that was stated in the Event ID 1074 event. The event ID 1074 indicated that the system is being powered off, not being put to sleep. Based on the logged events, when a shut down operation from Windows start menu is performed when hibernation with Fast Startup are configured on, only the host these two events (1074 & 42) are logged prior to the power change. And these two events have a mismatch of the activity performed on the system.
+
+![text](/images/Test09-02.png)
+
+```python
+The system is entering sleep.
+
+Sleep Reason: Application API
+```
+</details>
+
+
+#### Events after power state change
+
+Events after the power state change are exactly the same as in tests 5 - 8.
+
+| Event time | Event ID |
+|------------|----------|
+| 2026-01-04T19:10:23.8330420Z | Event ID 107 |
+| 2026-01-04T19:12:39.5002448Z | Event ID 1 (Kernel-General) |
+| 2026-01-04T19:12:40.7933317Z | Event ID 1 (Power-Troubleshooter) |
+
+
 
 
