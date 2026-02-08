@@ -688,3 +688,26 @@ Wake Time: ‎2026‎-‎01‎-‎03T16:47:30.747553600Z
 Wake Source: Power Button
 ```
 </details>
+
+<br>
+
+### Test 6
+
+Tests 6 has exactly the same event IDs and event information as Test 5.
+
+#### Events before power state change
+
+| Event time | Event ID |
+|------------|----------|
+| 2026-01-03T17:20:21.3379116Z | Event ID 187 |
+| 2026-01-03T17:20:22.4138999Z | Event ID 42 |
+
+
+#### Events after power state change
+
+| Event time | Event ID |
+|------------|----------|
+| 2026-01-03T17:20:23.4887130Z | Event ID 107 |
+| 2026-01-03T17:22:18.5003411Z | Event ID 1 (Kernel-General) |
+| 2026-01-03T17:22:20.5984291Z | Event ID 1 (Power-Troubleshooter) |
+
