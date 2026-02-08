@@ -641,7 +641,7 @@ Event log entries after power change activity:
 <details>
 <summary>Event ID 107</summary>
 
-The Event ID 107 indicates that the system has returned from sleep. This event is logged with an old timestamp as the operating system has not yet synched the time after sleep operation. This is observed in the next event ID 1.
+The Event ID 107 indicates that the system has returned from sleep. This event is logged with a timestamp prior to the power on activity as the operating system has not yet synched its time after a sleep operation. This sync activity is observed in the next event ID 1. The Event ID 107 and Event ID 1 (Kernel-General) events were always logged directly one after another. This can be observed as the EventRecordID number of the Event ID 107 is always one number lower than the event ID 1 (Kernel-General) event.
 
 ![text](/images/Test05-04.png)
 
