@@ -244,8 +244,6 @@ The Event ID 1074 indicates the directory path of the process which initiated th
 ```
 </details>
 
-<br>
-
 <details>
 <summary>Event ID 6006</summary>
 
@@ -257,8 +255,6 @@ The Event ID 6006 is not directly related to the power state change activity, bu
  The Event log service was stopped. 
 ```
 </details>
-
-<br>
 
 <details>
 <summary>Event ID 109</summary>
@@ -276,8 +272,6 @@ The Event ID 109 also indicates that a shut down was initiated on the host.
 ```
 </details>
 
-<br>
-
 <details>
 <summary>Event ID 577</summary>
 
@@ -288,12 +282,10 @@ The Event ID 109 also indicates that a shut down was initiated on the host.
 ```
 </details>
 
-<br>
-
 <details>
 <summary>Event ID 13</summary>
 
-And finally before shutdown activity Event ID 13 is logged with the timestamp of the power state change.
+The Event ID 13 is finally logged before the operating system shutdown with the timestamp of the power state change.
 
 ![text](/images/Test01-07.png)
 
