@@ -227,7 +227,7 @@ So I performed the below nine tests on the Windows test host:
 | 2026-01-03T15:35:31.6720412Z | Event ID 577 |
 | 2026-01-03T15:35:31.8679813Z | Event ID 13 |
 
-Here are the event log entries before power change:
+Event log entries before power change activity:
 
 <details>
 <summary>Event ID 1074</summary>
@@ -303,6 +303,58 @@ The Event ID 13 is finally logged before the operating system shutdown with the 
 | 2026-01-03T15:37:18.9528746Z | Event ID 20 |
 | 2026-01-03T15:37:29.1776946Z | Event ID 6005 |
 | 2026-01-03T15:37:29.1779612Z | Event ID 6013 |
+
+Event log entries after power change activity:
+
+<details>
+<summary>Event ID 12</summary>
+
+The Event ID 12 is first logged after operating system has been powered on with the timestamp of the power state change.
+
+![text](/images/Test01-08.png)
+
+```python
+ The operating system started at system time ‎2026‎-‎01‎-‎03T15:37:18.500000000Z.
+```
+</details>
+
+<details>
+<summary>Event ID 20</summary>
+
+The Event ID 20 indicates that the power change operation for both shutdown and bootup was successful.
+
+![text](/images/Test01-09.png)
+
+```python
+ The last shutdown's success status was true. The last boot's success status was true.
+```
+</details>
+
+<details>
+<summary>Event ID 6005</summary>
+
+The Event ID 6005 indicates that the event log service has been started. Similar to Event ID 6006 this is not directly related to power change activity, but the 6005 event is always included when operating system returns to S0 (Working) state from S5 (Soft off) state.
+
+![text](/images/Test01-09.png)
+
+```python
+ The Event log service was started.
+```
+</details>
+
+<details>
+<summary>Event ID 6013</summary>
+
+The Event ID 6013 is logged periodically (I believe once a day by default) by the operating system, but it is also logged after an operating system has returned to S0 (Working) state from S5 (Soft off) state. In this case the uptime in seconds value indicates a short uptime as the host has just started up.
+
+![text](/images/Test01-04.png)
+
+```python
+ The system uptime is 10 seconds.
+```
+</details>
+
+
 
 
 
