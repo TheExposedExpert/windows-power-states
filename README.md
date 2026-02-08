@@ -598,7 +598,6 @@ The system is entering sleep.
 
 Sleep Reason: Application API
 ```
-</details>
 
 <br>
 
@@ -616,7 +615,6 @@ The system is entering sleep.
 
 Sleep Reason: Button or Lid
 ```
-</details>
 
 Second example is due to system idle timer reaching the configured time period for sleep:
 
