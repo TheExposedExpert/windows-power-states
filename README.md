@@ -419,7 +419,7 @@ The process OptionalFeatures.exe has initiated the restart of computer DESKTOP-J
 
 The Event ID 109 also indicates that a reboot was initiated on the host.
 
-![text](/images/Test02-04.png)
+![text](/images/Test02-02.png)
 
 ```python
 The kernel power manager has initiated a shutdown transition.
