@@ -335,7 +335,7 @@ The Event ID 20 indicates that the power change operation for both shutdown and 
 
 The Event ID 6005 indicates that the event log service has been started. Similar to Event ID 6006 this is not directly related to power change activity, but the 6005 event is always included when operating system returns to S0 (Working) state from S5 (Soft off) state.
 
-![text](/images/Test01-09.png)
+![text](/images/Test01-03.png)
 
 ```python
  The Event log service was started.
