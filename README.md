@@ -443,6 +443,10 @@ Reason: Kernel API
 
 ### Test 3
 
+A BSOD was created on the test host with Mark Russinovich's SysInternals NotMyFault tool:
+
+![text](/images/notmyfault.png)
+
 #### Events before power state change
 
 An unexpected power state change from S0 (Working) to S5 (Soft off) due to a Blue Screen Of Death (BSOD) does not generate any event log entries before the power change activity.
