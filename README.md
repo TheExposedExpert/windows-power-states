@@ -94,9 +94,22 @@ Hybrid sleep, used on desktops, is where a system uses a hibernation file with S
 
 ![text](/images/controlpanel_allowhybridsleep.png)
 
+Fast startup is a type of shutdown that uses a hibernation file to speed up the subsequent boot. During this type of shutdown, the user is logged off before the hibernation file is created. Fast startup allows for a smaller hibernation file, more appropriate for systems with less storage capabilities. For more info, see Hibernation file types.
+
+When using fast startup, the system appears to the user as though a full shutdown (S5) has occurred, even though the system has actually gone through S4. This includes how the system responds to device wake alarms.
+
+Fast startup logs off user sessions, but the contents of kernel (session 0) are written to hard disk. This enables faster boot.
+
+In Windows, fast startup is the default transition when a system shutdown is requested. A full shutdown (S5) occurs when a system restart is requested or when an application calls a shutdown API.
+
 Similarly, the Fast Startup option can be configured with the old school power options control panel item. Currently the test system is configured with enabled option:
 
 ![text](/images/controlpanel_faststartup.png)
+
+<ins>Sources:</ins><br>
+https://learn.microsoft.com/en-us/windows-hardware/drivers/kernel/system-power-states
+<br>
+<br>
 
 So this laptop test system, running Windows 11 Pro version 10.0.26200.6584 supports the following system power states:
 
