@@ -197,7 +197,6 @@ And back.
 <br>
 <br>
 <br>
-<br>
 
 ## Test Results
 
@@ -232,7 +231,7 @@ Event log entries before power change activity:
 <details>
 <summary>Event ID 1074</summary>
 
-The Event ID 1074 indicates the directory path of the process which initiated the activity including the user name. The Shutdown Type field indicates that this is was a "power off" action.
+The Event ID 1074 indicates the directory path of the process which initiated the activity including the user name. The Shutdown Type field indicates that this is was a "power off" action. The initating process changes and can be logged also due to software installations or Windows update installation activity.
 
 ![text](/images/Test01-01.png)
 
@@ -354,7 +353,87 @@ The Event ID 6013 is logged periodically (I believe once a day by default) by th
 ```
 </details>
 
+<br>
 
+### Test 2
 
+Test 2 has exactly the same event IDs logged as Test 1, but events include mention of operating system restart instead of power off.
+
+#### Events before power state change
+
+| Event time | Event ID |
+|------------|----------|
+| 2026-01-03T16:00:27.6372575Z | Event ID 1074 |
+| 2026-01-03T16:00:30.4897288Z | Event ID 6006 |
+| 2026-01-03T16:00:35.4032567Z | Event ID 109 |
+| 2026-01-03T16:00:35.8332933Z | Event ID 577 |
+| 2026-01-03T16:00:36.0076589Z | Event ID 13 |
+
+Event log entries before power change activity:
+
+<details>
+<summary>Event ID 1074</summary>
+
+The Event ID 1074 indicates the directory path of the process which initiated the activity including the user name. The Shutdown Type field indicates that this is was a "restart" action. 
+
+![text](/images/Test02-01.png)
+
+```python
+The process C:\Windows\SystemApps\Microsoft.Windows.StartMenuExperienceHost_cw5n1h2txyewy\StartMenuExperienceHost.exe (DESKTOP-J1VGUK5) has initiated the restart of computer DESKTOP-J1VGUK5 on behalf of user DESKTOP-J1VGUK5\Test for the following reason: Other (Unplanned)
+ Reason Code: 0x0
+ Shutdown Type: restart
+ Comment: 
+```
+
+The initating process changes and can be logged also due to software installations or Windows update installation activity. For example, TrustedInstaller.exe can be source for the activity during operating system update installations:
+
+![text](/images/Test02-03.png)
+
+```python
+The process C:\WINDOWS\servicing\TrustedInstaller.exe (DESKTOP-J1VGUK5) has initiated the restart of computer DESKTOP-J1VGUK5 on behalf of user NT AUTHORITY\SYSTEM for the following reason: Operating System: Upgrade (Planned)
+ Reason Code: 0x80020003
+ Shutdown Type: restart
+ Comment: 
+```
+
+And OptionalFeatures.exe can be source for the activity when built-in operating system features are added to the host and the feature installation requires a restart to complete it:
+
+![text](/images/Test02-04.png)
+
+```python
+The process OptionalFeatures.exe has initiated the restart of computer DESKTOP-J1VGUK5 on behalf of user DESKTOP-J1VGUK5\Test for the following reason: No title for this reason could be found
+ Reason Code: 0x80020000
+ Shutdown Type: restart
+ Comment: 
+```
+
+</details>
+
+<details>
+<summary>Event ID 109</summary>
+
+The Event ID 109 also indicates that a reboot was initiated on the host.
+
+![text](/images/Test02-01.png)
+
+```python
+The kernel power manager has initiated a shutdown transition.
+
+Action: Power Action Reboot 
+Event Code: 0x0 
+Reason: Kernel API
+```
+</details>
+
+#### Events after power state change
+
+| Event time | Event ID |
+|------------|----------|
+| 2026-01-03T16:00:44.9476897Z | Event ID 12 |
+| 2026-01-03T16:00:44.9488803Z | Event ID 20 |
+| 2026-01-03T16:00:53.4769290Z | Event ID 6005 |
+| 2026-01-03T16:00:53.4772313Z | Event ID 6013 |
+
+Event log entries after power change activity:
 
 
